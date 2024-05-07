@@ -14,6 +14,7 @@ To use SSTI-Class-Indexer, simply clone this repository, navigate to the directo
 2. Climb up the inheritance tree: `http://MACHINE_IP/profile/{{ ''.class.mro }}`
 3. Access the root object: `http://MACHINE_IP/profile/{{ ''.class.mro[1] }}`
 4. List subclasses of the root object: `http://MACHINE_IP/profile/{{ ''.class.mro[1].subclasses() }}`
+
 The next step is to find the correct index of the desired class, and use the payload `http://MACHINE_IP/profile/{{ ''.__class__.__mro__[1].__subclasses__()[INDEX] }}` thereafter.
 
 ### How It Works
